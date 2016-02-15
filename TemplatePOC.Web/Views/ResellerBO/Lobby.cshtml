@@ -81,7 +81,7 @@
 
             <div class="form-group">
                 <label for="css">CSS:</label>
-                <textarea ui-codemirror="{ onLoad : vm.LoadCodeMirror }" ui-codemirror-opts="vm.editorOptions" id="css" name="css" class="form-control" rows="5" ng-model="vm.model.CSS"></textarea>
+                <textarea css-editor id="css" name="css" content="vm.model.CSS"></textarea>
             </div>
 
             <div class="form-group pull-right">

@@ -254,6 +254,8 @@
     <Content Include="Scripts\app\ResellerBO\controller\lobbyCtrl.js" />
     <Content Include="Scripts\app\ResellerBO\service\lobbySvc.js" />
     <Content Include="Scripts\app\_Common\app.common.js" />
+    <Content Include="Scripts\app\_Common\directive\cssEditor\cssEditor.html" />
+    <Content Include="Scripts\app\_Common\directive\cssEditor\cssEditor.js" />
     <Content Include="Scripts\app\_Common\directive\dropDown\dropDownDir.html" />
     <Content Include="Scripts\app\_Common\directive\dropDown\dropDownDir.js" />
     <Content Include="Scripts\app\_Common\service\gameGroupBox\gameGroupBox.html" />
