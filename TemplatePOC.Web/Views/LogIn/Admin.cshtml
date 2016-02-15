@@ -1,0 +1,27 @@
+﻿@model TemplatePOC.Web.DTO.LogIn.AdminUserLoginDTO
+
+@{
+    ViewBag.Title = "AdminLogIn";
+    Layout = "~/Views/Shared/_LogInLayout.cshtml";
+}
+
+@using (Html.BeginForm("Admin", "LogIn", FormMethod.Post,new { role="form"}))
+{
+    @Html.ValidationSummary()
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(model=>model.UserName)
+        @Html.TextBoxFor(model=>model.UserName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.UserName)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Password)
+        @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Password)
+    </div>
+
+    <button type="submit" class="btn btn-info">LogIn</button>
+}
+

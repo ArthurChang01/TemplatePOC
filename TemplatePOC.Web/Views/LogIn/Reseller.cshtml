@@ -1,0 +1,33 @@
+﻿@model TemplatePOC.Web.DTO.LogIn.ResellerUserLogInDTO
+
+@{
+    ViewBag.Title = "ResellerLogIn";
+    Layout = "~/Views/Shared/_LogInLayout.cshtml";
+}
+
+@using (Html.BeginForm("Reseller", "LogIn", FormMethod.Post, new { role = "form" }))
+{
+    @Html.ValidationSummary()
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(model=>model.Code)
+        @Html.TextBoxFor(model=>model.Code, new {@class="form-control"})
+        @Html.ValidationMessageFor(model=>model.Code)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.UserName)
+        @Html.TextBoxFor(model => model.UserName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.UserName)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Password)
+        @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Password)
+    </div>
+
+    <button type="submit" class="btn btn-info">LogIn</button>
+}
+
