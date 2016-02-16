@@ -4,9 +4,9 @@
     angular.module("app.reseller.bo")
               .controller("lobbyCtrl", lobbyCtrl);
 
-    lobbyCtrl.$inject = ["lobbySvc", "gameGroupBoxSvc", "$log", "$state", "$stateParams"];
+    lobbyCtrl.$inject = ["lobbySvc", "gameGroupBoxSvc","previewBoxSvc", "$log", "$state", "$stateParams"];
 
-    function lobbyCtrl(lobbySvc, gameGroupBoxSvc, $log, $state, $stateParams) {
+    function lobbyCtrl(lobbySvc, gameGroupBoxSvc, previewBoxSvc, $log, $state, $stateParams) {
         var vm = this;
         vm.IsAdd = !$stateParams.id;
         vm.model = {
@@ -25,7 +25,10 @@
         vm.OnPreview = onPreview;
         vm.OnSave = onSave;
 
-        function onPreview() { }
+        function onPreview() {
+            var template = vm.model.Templates.filter(function (val) { return val.Id === vm.model.TemplateId; })[0];
+            previewBoxSvc.OpenPreviewBox(template.Name, template.PreviewUrl);
+        }
 
         function onSave() {
 

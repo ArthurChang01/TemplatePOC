@@ -9,7 +9,7 @@ namespace TemplatePOC.Web.Controllers.MVC
     public class TemplateController : Controller
     {
         [Route("/Template/AG/:id:GUID")]
-        public ActionResult Template1(Guid id)
+        public ActionResult Template1()
         {
             return View();
         }

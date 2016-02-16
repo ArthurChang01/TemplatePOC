@@ -66,7 +66,7 @@ namespace TemplatePOC.Web.Controllers.API
 
             try
             {
-                group = await (from lobby in ctx.Lobbies.Include("Template")
+                group = await (from lobby in ctx.Lobbies
                                where lobby.Id == id
                                select new GetByResponse
                                {
@@ -90,10 +90,11 @@ namespace TemplatePOC.Web.Controllers.API
                                        TemplateId = lobby.TemplateId,
                                        CreateDate = g.CreatedDate,
                                        UpdateDate = g.UpdatedDate
-                                   })
+                                   }),
+                                   Templates = ctx.Templates.Select(o => new TemplateItem() { Id = o.Id, Name = o.Name, PreviewUrl = o.PreviewUrl})
                                })
                     .FirstOrDefaultAsync();
-                group.Templates = await ctx.Templates.Select(o => new TemplateItem() { Id = o.Id, Name = o.Name }).ToListAsync();
+                //group.Templates = await ctx.Templates.Select(o => new TemplateItem() { Id = o.Id, Name = o.Name }).ToListAsync();
 
             }
             catch (Exception ex) { return InternalServerError(ex); }
@@ -113,7 +114,8 @@ namespace TemplatePOC.Web.Controllers.API
                             new TemplateItem()
                             {
                                 Id = o.Id,
-                                Name = o.Name
+                                Name = o.Name,
+                                PreviewUrl = o.PreviewUrl
                             }).ToListAsync();
             }
             catch (Exception ex)

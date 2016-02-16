@@ -268,6 +268,9 @@
     <Content Include="Scripts\app\_Common\service\messageBox\messageBox.html" />
     <Content Include="Scripts\app\_Common\service\messageBox\messageBoxCtrl.js" />
     <Content Include="Scripts\app\_Common\service\messageBox\messageBoxSvc.js" />
+    <Content Include="Scripts\app\_Common\service\previewBox\previewBox.html" />
+    <Content Include="Scripts\app\_Common\service\previewBox\previewBoxCtrl.js" />
+    <Content Include="Scripts\app\_Common\service\previewBox\previewBoxSvc.js" />
     <Content Include="Scripts\app\_Common\value\lobbyStatus.js" />
     <Content Include="Scripts\app\_RouterConfig\app.admin.bo.routConfig.js" />
     <Content Include="Scripts\app\_RouterConfig\app.reseller.bo.routeConfig.js" />

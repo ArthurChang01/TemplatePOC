@@ -25,7 +25,7 @@ namespace TemplatePOC.Web.Models.Template
                 Type = enLobbyType.Mobile,
                 Description = "Game Provider Integration Mobile",
                 Status = enLobbyStatus.Activate,
-                PreviewUrl = "http://www.google.com.tw",
+                PreviewUrl = "/Template/Template1",
                 Lobbies = new List<Lobby>()
                 {
                     new Lobby()
@@ -42,7 +42,7 @@ namespace TemplatePOC.Web.Models.Template
                 Type = enLobbyType.Desktop,
                 Description = "Game Provider Integration",
                 Status = enLobbyStatus.Activate,
-                PreviewUrl = "http://www.google.com.tw",
+                PreviewUrl = "/Template/Template1",
                 Lobbies = new List<Lobby>()
                 {
                     new Lobby()
@@ -59,7 +59,7 @@ namespace TemplatePOC.Web.Models.Template
                 Type = enLobbyType.Desktop,
                 Description = "TLC",
                 Status = enLobbyStatus.Activate,
-                PreviewUrl = "http://www.google.com.tw",
+                PreviewUrl = "/Template/Template1",
                 Lobbies = new List<Lobby>()
                 {
                     new Lobby()
@@ -76,7 +76,7 @@ namespace TemplatePOC.Web.Models.Template
                 Type = enLobbyType.Mobile,
                 Description = "RB88",
                 Status = enLobbyStatus.Activate,
-                PreviewUrl = "http://www.google.com.tw",
+                PreviewUrl = "/Template/Template1",
                 Lobbies = new List<Lobby>()
                 {
                     new Lobby()
@@ -93,7 +93,7 @@ namespace TemplatePOC.Web.Models.Template
                 Type = enLobbyType.Mobile,
                 Description = "Fun88",
                 Status = enLobbyStatus.Activate,
-                PreviewUrl = "http://www.google.com.tw"
+                PreviewUrl = "/Template/Template1"
             }
             };
 

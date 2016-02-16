@@ -11,6 +11,8 @@ namespace TemplatePOC.Web.DTO.Lobby
         public Guid Id { get; set; }
 
         public string Name { get; set; }
+
+        public string PreviewUrl { get; set; }
     }
 
     public class GameGroup
