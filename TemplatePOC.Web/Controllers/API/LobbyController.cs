@@ -6,10 +6,12 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Data.Entity;
 using System.Web.Http;
+using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using TemplatePOC.Web.DTO.Lobby;
 using TemplatePOC.Web.Models.Template;
 using TemplatePOC.Web.Models.Template.POCO;
-using TemplatePOC.Web.Models.ValueObject;
+using TemplatePOC.Web.Models.Template.ValueObject;
 using GameGroup = TemplatePOC.Web.DTO.Lobby.GameGroup;
 
 namespace TemplatePOC.Web.Controllers.API
@@ -46,18 +48,10 @@ namespace TemplatePOC.Web.Controllers.API
                     })
                     .ToListAsync();
 
-                ieGroup = result.Select(o => new GetLobbyResponse()
-                {
-                    Id = o.Id,
-                    Name = o.Name,
-                    TemplateName = o.TemplateName,
-                    Type = Enum.GetName(typeof(enLobbyType), o.Type),
-                    Description = o.Description,
-                    Status = Enum.GetName(typeof(enLobbyStatus), o.Status),
-                    CreatedDate = o.CreateDate,
-                    UpdatedDate = o.UpdateDate,
-                    Credential = o.Credential
-                });
+                ieGroup = (new MapperConfiguration(cfg =>cfg.CreateMissingTypeMaps = true)
+                                            .CreateMapper()
+                                            .Map<IEnumerable<GetLobbyResponse>>(result));
+
             }
             catch (Exception ex)
             { return InternalServerError(ex); }

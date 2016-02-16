@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
-using TemplatePOC.Web.Models.ValueObject;
+using TemplatePOC.Web.Models.Template.ValueObject;
 
 namespace TemplatePOC.Web.Models.Template.POCO
 {

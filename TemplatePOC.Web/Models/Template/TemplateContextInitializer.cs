@@ -8,7 +8,7 @@ using System.Web;
 using TemplatePOC.Web.Models.LogIn.POCO;
 using TemplatePOC.Web.Models.Template;
 using TemplatePOC.Web.Models.Template.POCO;
-using TemplatePOC.Web.Models.ValueObject;
+using TemplatePOC.Web.Models.Template.ValueObject;
 
 namespace TemplatePOC.Web.Models.Template
 {

@@ -48,6 +48,10 @@
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="AutoMapper, Version=4.2.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.4.2.0\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -66,7 +70,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Swashbuckle.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cd1bb07a5ac7c7bc, processorArchitecture=MSIL">
-      <HintPath>..\packages\Swashbuckle.Core.5.2.2\lib\net40\Swashbuckle.Core.dll</HintPath>
+      <HintPath>..\packages\Swashbuckle.Core.5.3.1\lib\net40\Swashbuckle.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -204,8 +208,8 @@
     <Compile Include="Models\Template\POCO\TemplateGameGroup.cs" />
     <Compile Include="Models\Template\POCO\Template.cs" />
     <Compile Include="Models\Template\TemplateContext.cs" />
-    <Compile Include="Models\ValueObject\enLobbyStatus.cs" />
-    <Compile Include="Models\ValueObject\enLobbyType.cs" />
+    <Compile Include="Models\Template\ValueObject\enLobbyStatus.cs" />
+    <Compile Include="Models\Template\ValueObject\enLobbyType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -358,12 +362,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="HTMLPartials\_adminMenu.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="HTMLPartials\_resellerMenu.html" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\ResellerBO\Reseller.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -407,6 +405,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AdminBO\_adminMenu.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ResellerBO\_resellerMenu.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

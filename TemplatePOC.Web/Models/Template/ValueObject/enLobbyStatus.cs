@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace TemplatePOC.Web.Models.ValueObject
+namespace TemplatePOC.Web.Models.Template.ValueObject
 {
     public enum enLobbyStatus:byte
     {

@@ -14,21 +14,21 @@
             .state('reseller', {
                 url: '/BO/Reseller',
                 views:{
-                    'sideMenu': { templateUrl: '/HTMLPartials/_resellerMenu.html' },
+                    'sideMenu': { templateUrl: '/_resellerMenu.html' },
                     'content':{templateUrl:'/ResellerBO/Reseller'}
                 }
             })
             .state('addLobby', {
                 url: '/BO/reseller/lobby/',
                 views: {
-                    'sideMenu': { templateUrl: '/HTMLPartials/_resellerMenu.html' },
+                    'sideMenu': { templateUrl: '/_resellerMenu.html' },
                     'content': { templateUrl: '/ResellerBO/Lobby' }
                 }
             })
             .state('updateLobby', {
                 url: '/BO/reseller/lobby/:id',
                 views: {
-                    'sideMenu': { templateUrl: '/HTMLPartials/_resellerMenu.html' },
+                    'sideMenu': { templateUrl: '/_resellerMenu.html' },
                     'content': { templateUrl: '/ResellerBO/Lobby' }
                 }
             });

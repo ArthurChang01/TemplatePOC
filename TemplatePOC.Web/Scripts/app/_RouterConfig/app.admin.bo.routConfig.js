@@ -14,21 +14,21 @@
             .state('admin', {
                 url: '/BO/admin',
                 views:{
-                    'sideMenu': { templateUrl: '/HTMLPartials/_adminMenu.html' },
+                    'sideMenu': { templateUrl: '/_adminMenu.html' },
                     'content':{templateUrl:'/AdminBO/Admin'}
                 }
             })
             .state('addLobbyDesign', {
                 url: '/BO/admin/lobbyDesign',
                 views:{
-                    'sideMenu': { templateUrl: '/HTMLPartials/_adminMenu.html' },
+                    'sideMenu': { templateUrl: '/_adminMenu.html' },
                     'content': { templateUrl: '/AdminBO/LobbyDesign' }
                 }
             })
             .state('updateLobbyDesign', {
                 url: '/BO/admin/lobbyDesign/:id',
                 views:{
-                    'sideMenu': { templateUrl: '/HTMLPartials/_adminMenu.html' },
+                    'sideMenu': { templateUrl: '/_adminMenu.html' },
                     'content': { templateUrl: '/AdminBO/LobbyDesign' }
                 }
             });

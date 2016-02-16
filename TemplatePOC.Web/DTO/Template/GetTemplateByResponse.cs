@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using TemplatePOC.Web.Models.Template.POCO;
-using TemplatePOC.Web.Models.ValueObject;
+using TemplatePOC.Web.Models.Template.ValueObject;
 
 namespace TemplatePOC.Web.DTO.Template
 {
@@ -47,6 +47,6 @@ namespace TemplatePOC.Web.DTO.Template
 
         public string Credential { get; set; }
 
-        public IList<GameGroup> GameGroups { get; set; }
+        public IEnumerable<GameGroup> GameGroups { get; set; }
     }
 }

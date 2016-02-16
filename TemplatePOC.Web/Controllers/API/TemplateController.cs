@@ -6,10 +6,11 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Data.Entity;
 using System.Web.Http;
+using AutoMapper;
 using TemplatePOC.Web.Models.Template;
 using TemplatePOC.Web.Models.Template.POCO;
-using TemplatePOC.Web.Models.ValueObject;
 using TemplatePOC.Web.DTO.Template;
+using TemplatePOC.Web.Models.Template.ValueObject;
 
 namespace TemplatePOC.Web.Controllers.API
 {
@@ -43,16 +44,9 @@ namespace TemplatePOC.Web.Controllers.API
                                                  Credential=o.Credential
                                              })
                                              .ToListAsync();
-                ieGroup = result.Select(o=>new GetTemplatesResponse() {
-                    Id = o.Id,
-                    Name = o.Name,
-                    Type = Enum.GetName(typeof(enLobbyType), o.Type),
-                    Description = o.Description,
-                    Status = Enum.GetName(typeof(enLobbyStatus), o.Status),
-                    CreatedDate = o.CreatedDate,
-                    UpdatedDate = o.UpdatedDate,
-                    Credential = o.Credential
-                });
+                ieGroup = (new MapperConfiguration(cfg => cfg.CreateMissingTypeMaps = true)
+                                            .CreateMapper()
+                                            .Map<IEnumerable<GetTemplatesResponse>>(result));
             }
             catch (Exception ex)
             { return InternalServerError(ex); }
@@ -90,7 +84,7 @@ namespace TemplatePOC.Web.Controllers.API
                                                       TemplateId=g.TemplateId,
                                                       CreateDate=g.CreatedDate,
                                                       UpdateDate=g.UpdatedDate
-                                                  }).ToList()
+                                                  })
                                               })
                                               .FirstOrDefaultAsync();
             }
