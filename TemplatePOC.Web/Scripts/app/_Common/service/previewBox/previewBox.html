@@ -2,7 +2,8 @@
     <h3 class="modal-title">{{tempplateName}}</h3>
 </div>
 <div class="modal-body">
-    <iframe width="570" height="800" ng-src='{{givenUrl}}'></iframe>
+    <!--<iframe width="570" height="800" ng-src='{{givenUrl}}'></iframe>-->
+    <post-message-dir css-string="css" source-url="givenUrl"></post-message-dir>
 </div>
 <div class="modal-footer">
     <button class="btn btn-primary" type="button" ng-click="OK()">OK</button>

@@ -6,16 +6,14 @@ using System.Web.Mvc;
 
 namespace TemplatePOC.Web.Controllers.MVC
 {
-    public class TemplateController : Controller
+    public class GameLobbyController : Controller
     {
-        [Route("/Template/AG/:id:GUID")]
-        public ActionResult Template1()
+        public ActionResult GameLobby1()
         {
             return View();
         }
 
-        [Route("/Template/SubetCredit/:id:GUID")]
-        public ActionResult Template2(Guid id)
+        public ActionResult GameLobby2(Guid id)
         {
             return View();
         }

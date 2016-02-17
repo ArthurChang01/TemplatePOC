@@ -11,7 +11,7 @@
             OpenPreviewBox: openPreviewBox
         };
 
-        function openPreviewBox(templateName, previewUrl) {
+        function openPreviewBox(templateName, previewUrl, css) {
             return $uibModal.open({
                 animation: true,
                 templateUrl: '/Scripts/app/_Common/service/previewBox/previewBox.html',
@@ -22,6 +22,9 @@
                     },
                     previewUrl: function() {
                         return previewUrl;
+                    },
+                    css: function () {
+                        return css;
                     }
                 }
             });

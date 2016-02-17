@@ -4,12 +4,13 @@
     angular.module("app.common")
         .controller("previewBoxCtrl", previewBoxCtrl);
 
-    previewBoxCtrl.$inject = ["$scope", "$uibModalInstance", "$sce", "templateName", "previewUrl"];
+    previewBoxCtrl.$inject = ["$scope", "$uibModalInstance", "$sce", "templateName", "previewUrl", "css"];
 
-    function previewBoxCtrl($scope, $uibModalInstance, $sce, templateName, previewUrl) {
+    function previewBoxCtrl($scope, $uibModalInstance, $sce, templateName, previewUrl, css) {
         var vm = $scope;
         vm.tempplateName = templateName;
         vm.givenUrl = $sce.trustAsResourceUrl(previewUrl);
+        vm.css = css;
 
         vm.OK = ok;
         vm.Cancel = cancel;

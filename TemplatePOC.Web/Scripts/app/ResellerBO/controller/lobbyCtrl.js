@@ -27,7 +27,7 @@
 
         function onPreview() {
             var template = vm.model.Templates.filter(function (val) { return val.Id === vm.model.TemplateId; })[0];
-            previewBoxSvc.OpenPreviewBox(template.Name, template.PreviewUrl);
+            previewBoxSvc.OpenPreviewBox(template.Name, template.PreviewUrl, vm.model.CSS);
         }
 
         function onSave() {

@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Template1";
+    Layout = "~/Views/Shared/_TemplateLayout.cshtml";
+}
+
+<h2 id="title">Template1</h2>
+
+<style id="custCSS"></style>
+
+<script type="text/javascript">
+    window.onload = function () {
+        function receiveMessage(e) {
+            document.getElementById("custCSS").textContent = e.data;
+        }
+
+        window.addEventListener('message', receiveMessage);
+    }
+</script>
+

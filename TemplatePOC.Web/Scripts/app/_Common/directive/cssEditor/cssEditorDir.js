@@ -11,7 +11,7 @@
             scope: {
                 content: "="
             },
-            templateUrl: "/Scripts/app/_Common/directive/cssEditor/cssEditor.html",
+            templateUrl: "/Scripts/app/_Common/directive/cssEditor/cssEditorDir.html",
             controller: ["$scope",fnCtrl]
         };
 

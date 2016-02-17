@@ -189,7 +189,7 @@
     <Compile Include="Controllers\MVC\AdminBOController.cs" />
     <Compile Include="Controllers\MVC\LogInController.cs" />
     <Compile Include="Controllers\MVC\HomeController.cs" />
-    <Compile Include="Controllers\MVC\TemplateController.cs" />
+    <Compile Include="Controllers\MVC\GameLobbyController.cs" />
     <Compile Include="DTO\LogIn\AdminUserLoginDTO.cs" />
     <Compile Include="DTO\Template\GetTemplateByResponse.cs" />
     <Compile Include="DTO\LogIn\ResellerUserLogInDTO.cs" />
@@ -258,10 +258,12 @@
     <Content Include="Scripts\app\ResellerBO\controller\lobbyCtrl.js" />
     <Content Include="Scripts\app\ResellerBO\service\lobbySvc.js" />
     <Content Include="Scripts\app\_Common\app.common.js" />
-    <Content Include="Scripts\app\_Common\directive\cssEditor\cssEditor.html" />
-    <Content Include="Scripts\app\_Common\directive\cssEditor\cssEditor.js" />
+    <Content Include="Scripts\app\_Common\directive\cssEditor\cssEditorDir.html" />
+    <Content Include="Scripts\app\_Common\directive\cssEditor\cssEditorDir.js" />
     <Content Include="Scripts\app\_Common\directive\dropDown\dropDownDir.html" />
     <Content Include="Scripts\app\_Common\directive\dropDown\dropDownDir.js" />
+    <Content Include="Scripts\app\_Common\directive\postMessage\postMessageDir.html" />
+    <Content Include="Scripts\app\_Common\directive\postMessage\postMessageDir.js" />
     <Content Include="Scripts\app\_Common\service\gameGroupBox\gameGroupBox.html" />
     <Content Include="Scripts\app\_Common\service\gameGroupBox\gameGroupBoxCtrl.js" />
     <Content Include="Scripts\app\_Common\service\gameGroupBox\gameGroupBoxSvc.js" />
@@ -347,10 +349,10 @@
     <Content Include="Views\Shared\_TemplateLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Template\Template1.cshtml" />
+    <Content Include="Views\GameLobby\GameLobby1.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Template\Template2.cshtml" />
+    <Content Include="Views\GameLobby\GameLobby2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\LogIn\Admin.cshtml" />
