@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D946C1F4-ECD0-44AA-8D06-F423E775B26D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TemplatePOC.Core</RootNamespace>
+    <AssemblyName>TemplatePOC.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Lobby\DomainEvent\AddLobbyEvent.cs" />
+    <Compile Include="Lobby\DomainEvent\AddLobbyGameGroupEvent.cs" />
+    <Compile Include="Lobby\DomainEvent\RemoveLobbyEvent.cs" />
+    <Compile Include="Lobby\DomainEvent\RemoveLobbyGameGroupEvent.cs" />
+    <Compile Include="Lobby\DomainEvent\UpdateLobbyEvent.cs" />
+    <Compile Include="Lobby\DomainEvent\UpdateLobbyGameGroupEvent.cs" />
+    <Compile Include="Lobby\Entity\Lobby.cs" />
+    <Compile Include="Lobby\Enums\enLobbyStatus.cs" />
+    <Compile Include="Lobby\Enums\enLobbyType.cs" />
+    <Compile Include="Lobby\ValueObject\LobbyDescription.cs" />
+    <Compile Include="Lobby\ValueObject\LobbyGameGroup.cs" />
+    <Compile Include="Lobby\ValueObject\Template.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Authentication\Entity\" />
+    <Folder Include="Authentication\ValueObject\" />
+    <Folder Include="Common\" />
+    <Folder Include="Template\Entity\" />
+    <Folder Include="Template\ValueObject\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -81,7 +81,10 @@
 
             <div class="form-group">
                 <label for="css">CSS:</label>
-                <textarea css-editor id="css" name="css" content="vm.model.CSS"></textarea>
+                <textarea css-editor id="css" name="css" content="vm.model.CSS" css-validation></textarea>
+                <span ng-show="form.css.$error.cssValidation" style="color:red;">
+                    Incorrect CSS
+                </span>
             </div>
 
             <div class="form-group pull-right">

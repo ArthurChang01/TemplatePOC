@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplatePOC.Web", "TemplatePOC.Web\TemplatePOC.Web.csproj", "{5CC3EEE3-FC9F-4A81-A1A3-3AF7B2609833}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplatePOC.Service", "TemplatePOC.Service\TemplatePOC.Service.csproj", "{4954C29C-DF9A-435B-82AB-10B1FD54DADE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplatePOC.Core", "TemplatePOC.Core\TemplatePOC.Core.csproj", "{D946C1F4-ECD0-44AA-8D06-F423E775B26D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{5CC3EEE3-FC9F-4A81-A1A3-3AF7B2609833}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5CC3EEE3-FC9F-4A81-A1A3-3AF7B2609833}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5CC3EEE3-FC9F-4A81-A1A3-3AF7B2609833}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4954C29C-DF9A-435B-82AB-10B1FD54DADE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4954C29C-DF9A-435B-82AB-10B1FD54DADE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4954C29C-DF9A-435B-82AB-10B1FD54DADE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4954C29C-DF9A-435B-82AB-10B1FD54DADE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D946C1F4-ECD0-44AA-8D06-F423E775B26D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D946C1F4-ECD0-44AA-8D06-F423E775B26D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D946C1F4-ECD0-44AA-8D06-F423E775B26D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D946C1F4-ECD0-44AA-8D06-F423E775B26D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
