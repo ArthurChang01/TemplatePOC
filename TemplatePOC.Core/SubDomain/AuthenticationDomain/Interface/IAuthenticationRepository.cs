@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TemplatePOC.Core.Lobby.DomainEvent
+namespace TemplatePOC.Core.SubDomain.AuthenticationDomain.Interface
 {
-    public class UpdateLobbyEvent
+    public interface IAuthenticationRepository
     {
     }
 }

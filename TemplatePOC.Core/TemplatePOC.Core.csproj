@@ -30,7 +30,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,26 +49,44 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Lobby\DomainEvent\AddLobbyEvent.cs" />
-    <Compile Include="Lobby\DomainEvent\AddLobbyGameGroupEvent.cs" />
-    <Compile Include="Lobby\DomainEvent\RemoveLobbyEvent.cs" />
-    <Compile Include="Lobby\DomainEvent\RemoveLobbyGameGroupEvent.cs" />
-    <Compile Include="Lobby\DomainEvent\UpdateLobbyEvent.cs" />
-    <Compile Include="Lobby\DomainEvent\UpdateLobbyGameGroupEvent.cs" />
-    <Compile Include="Lobby\Entity\Lobby.cs" />
-    <Compile Include="Lobby\Enums\enLobbyStatus.cs" />
-    <Compile Include="Lobby\Enums\enLobbyType.cs" />
-    <Compile Include="Lobby\ValueObject\LobbyDescription.cs" />
-    <Compile Include="Lobby\ValueObject\LobbyGameGroup.cs" />
-    <Compile Include="Lobby\ValueObject\Template.cs" />
+    <Compile Include="Base\Element\EntityBase.cs" />
+    <Compile Include="Base\Element\Event.cs" />
+    <Compile Include="Base\Element\EventBus.cs" />
+    <Compile Include="Base\Element\ValueObjectBase.cs" />
+    <Compile Include="Base\Interface\IEvent.cs" />
+    <Compile Include="Base\Interface\IEventBus.cs" />
+    <Compile Include="Base\Interface\IEventHandler.cs" />
+    <Compile Include="Base\Interface\IMessage.cs" />
+    <Compile Include="Base\Interface\IMessageDispatcher.cs" />
+    <Compile Include="Base\Interface\IMessageHandler.cs" />
+    <Compile Include="SubDomain\AuthenticationDomain\Entity\AdminUser.cs" />
+    <Compile Include="SubDomain\AuthenticationDomain\Entity\ResellerUser.cs" />
+    <Compile Include="SubDomain\AuthenticationDomain\Interface\IAuthenticationRepository.cs" />
+    <Compile Include="SubDomain\LobbyDomain\Event\AddLobbyEvent.cs" />
+    <Compile Include="SubDomain\LobbyDomain\Event\AddLobbyGameGroupEvent.cs" />
+    <Compile Include="SubDomain\LobbyDomain\Event\RemoveLobbyEvent.cs" />
+    <Compile Include="SubDomain\LobbyDomain\Event\RemoveLobbyGameGroupEvent.cs" />
+    <Compile Include="SubDomain\LobbyDomain\Event\UpdateLobbyEvent.cs" />
+    <Compile Include="SubDomain\LobbyDomain\Event\UpdateLobbyGameGroupEvent.cs" />
+    <Compile Include="SubDomain\LobbyDomain\Entity\Lobby.cs" />
+    <Compile Include="SubDomain\LobbyDomain\Entity\TemplateGameGroup.cs" />
+    <Compile Include="SubDomain\LobbyDomain\Enums\enLobbyStatus.cs" />
+    <Compile Include="SubDomain\LobbyDomain\Enums\enLobbyType.cs" />
+    <Compile Include="SubDomain\LobbyDomain\Interface\ILobbyRepository.cs" />
+    <Compile Include="SubDomain\LobbyDomain\ValueObject\LobbyDescription.cs" />
+    <Compile Include="SubDomain\LobbyDomain\Entity\LobbyGameGroup.cs" />
+    <Compile Include="SubDomain\LobbyDomain\Entity\Template.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SubDomain\LobbyDomain\ValueObject\LobbyGameGroupDescription.cs" />
+    <Compile Include="SubDomain\LobbyDomain\ValueObject\TemplateDescription.cs" />
+    <Compile Include="SubDomain\LobbyDomain\ValueObject\TemplateGameGroupDescription.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Authentication\Entity\" />
-    <Folder Include="Authentication\ValueObject\" />
-    <Folder Include="Common\" />
-    <Folder Include="Template\Entity\" />
-    <Folder Include="Template\ValueObject\" />
+    <Folder Include="SubDomain\AuthenticationDomain\Event\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

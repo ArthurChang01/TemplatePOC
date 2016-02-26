@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TemplatePOC.Core.Lobby.Enums
+namespace TemplatePOC.Core.Base.Interface
 {
-    public enum enLobbyType : byte
+    public interface IMessageHandler<T> where T:IMessage
     {
-
     }
 }

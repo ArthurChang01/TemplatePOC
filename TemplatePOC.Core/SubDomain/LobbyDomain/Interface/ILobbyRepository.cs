@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TemplatePOC.Core.Lobby.DomainEvent
+namespace TemplatePOC.Core.SubDomain.LobbyDomain.Interface
 {
-    public class AddLobbyEvent
+    public interface ILobbyRepository
     {
     }
 }

@@ -61,7 +61,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\Repository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SubDomain\AuthenticationDomain\DataAccess\AuthenticationContext.cs" />
+    <Compile Include="SubDomain\AuthenticationDomain\DataAccess\AuthenticationDataInitialize.cs" />
+    <Compile Include="SubDomain\AuthenticationDomain\DataAccess\AuthenticationRepository.cs" />
+    <Compile Include="SubDomain\LobbyDomain\DataAccess\LobbyContext.cs" />
+    <Compile Include="SubDomain\LobbyDomain\DataAccess\LobbyDataInitializer.cs" />
+    <Compile Include="SubDomain\LobbyDomain\DataAccess\LobbyRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TemplatePOC.Core\TemplatePOC.Core.csproj">
@@ -72,6 +79,10 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="SubDomain\AuthenticationDomain\EventHandlers\" />
+    <Folder Include="SubDomain\LobbyDomain\EventHandlers\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

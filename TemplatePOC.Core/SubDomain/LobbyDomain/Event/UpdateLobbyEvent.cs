@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TemplatePOC.Core.Base.Element;
 
-namespace TemplatePOC.Core.Lobby.DomainEvent
+namespace TemplatePOC.Core.SubDomain.Lobby.DomainEvent
 {
-    public class RemoveLobbyEvent
+    public class UpdateLobbyEvent : Event
     {
     }
 }

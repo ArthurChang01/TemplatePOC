@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TemplatePOC.Core.Lobby.DomainEvent
+namespace TemplatePOC.Core.Base.Interface
 {
-    public class UpdateLobbyGameGroupEvent
+    public interface IEvent : IMessage
     {
+        Guid Id { get; }
     }
 }

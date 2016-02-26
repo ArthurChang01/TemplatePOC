@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TemplatePOC.Core.Lobby.Enums
+namespace TemplatePOC.Core.SubDomain.LobbyDomain.Enums
 {
-    public enum enLobbyStatus:byte
+    public enum enLobbyType : byte
     {
+        Mobile = 0,
+        Desktop
     }
 }
