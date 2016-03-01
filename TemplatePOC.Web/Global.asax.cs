@@ -6,6 +6,7 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using TemplatePOC.Web.App_Start;
 
 namespace TemplatePOC.Web
 {
@@ -13,6 +14,7 @@ namespace TemplatePOC.Web
     {
         protected void Application_Start()
         {
+            AutoMapperConfig.Configuration();
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

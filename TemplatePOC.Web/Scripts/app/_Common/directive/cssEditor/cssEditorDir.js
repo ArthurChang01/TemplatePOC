@@ -1,7 +1,6 @@
 ﻿(function () {
-    "use strict";
-
-    angular.module("app.common")
+    angular.module("components")
+        .value("codeMirrorInstance", { instance: null })
         .directive("cssEditor", cssEditor);
 
     function cssEditor() {
@@ -11,11 +10,11 @@
             scope: {
                 content: "="
             },
-            templateUrl: "/Scripts/app/_Common/directive/cssEditor/cssEditorDir.html",
-            controller: ["$scope",fnCtrl]
+            template: "<textarea class='form-control' rows='5' ng-model='content' ui-codemirror='{ onLoad : LoadCodeMirror }' ui-codemirror-opts='editorOptions'></textarea>",
+            controller: ["$scope", "codeMirrorInstance", fnCtrl]
         };
 
-        function fnCtrl($scope) {
+        function fnCtrl($scope, codeMirrorInstance) {
             var vm = $scope;
             vm.editorOptions = {
                 lineNumbers: true,
@@ -25,7 +24,7 @@
                 indentUnit: 4,
                 showHint: true,
                 inputStyle: 'textarea',
-                theme: 'night',
+                theme: 'elegant',
                 extraKeys: { "Ctrl-Z": "autocomplete" },
                 keyMap: 'sublime',
                 mode: 'css'
@@ -34,30 +33,23 @@
             vm.LoadCodeMirror = loadCodeMirror;
 
             function loadCodeMirror(target) {
+                codeMirrorInstance.instance = target;
                 var timeouts = [];
-                var singleQuoteFlag = false,
-                    quoteFlag = false;
 
                 target.on("change", function (editor, change) {
 
                     if (change.origin === '+input') {
                         var text = change.text.toString();
 
-                        if (text.match(/'/))
-                            singleQuoteFlag = !singleQuoteFlag;
-                        if (text.match(/"/))
-                            quoteFlag = !quoteFlag;
-
-                        if (!text.match(/[\s()\[\]{};:@"']/) && !singleQuoteFlag && !quoteFlag)
+                        if (!text.match(/[\s()\[\]{};:@."'\r\n\t]/))
                             timeouts.push(setTimeout(function () {
                                 editor.execCommand("autocomplete");
-                            }, 250));
+                            }, 50));
                         else
                             timeouts.splice(0, timeouts.length);
                     }
                 });
             }
         }
-
     }
 })();

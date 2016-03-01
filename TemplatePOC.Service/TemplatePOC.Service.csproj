@@ -69,6 +69,7 @@
     <Compile Include="SubDomain\LobbyDomain\DataAccess\LobbyContext.cs" />
     <Compile Include="SubDomain\LobbyDomain\DataAccess\LobbyDataInitializer.cs" />
     <Compile Include="SubDomain\LobbyDomain\DataAccess\LobbyRepository.cs" />
+    <Compile Include="SubDomain\LobbyDomain\DataAccess\LobbyUnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TemplatePOC.Core\TemplatePOC.Core.csproj">

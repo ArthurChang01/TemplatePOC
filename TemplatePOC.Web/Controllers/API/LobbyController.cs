@@ -13,6 +13,8 @@ using TemplatePOC.Web.Models.Template;
 using TemplatePOC.Web.Models.Template.POCO;
 using TemplatePOC.Web.Models.Template.ValueObject;
 using GameGroup = TemplatePOC.Web.DTO.Lobby.GameGroup;
+using Swashbuckle.Swagger.Annotations;
+using TemplatePOC.Web.Misc.Log;
 
 namespace TemplatePOC.Web.Controllers.API
 {
@@ -22,6 +24,8 @@ namespace TemplatePOC.Web.Controllers.API
         public TemplateContext ctx = new TemplateContext();
 
         [HttpGet]
+        [SwaggerResponse(HttpStatusCode.OK, @"取得大廳列表", typeof(IEnumerable<GetLobbyResponse>))]
+        //[SwaggerResponse(HttpStatusCode.InternalServerError, @"錯誤內容", typeof(ErrorOutDto))]
         public async Task<IHttpActionResult> GetLobbies(int index, int limit)
         {
             IEnumerable<GetLobbyResponse> ieGroup = null;
@@ -54,7 +58,11 @@ namespace TemplatePOC.Web.Controllers.API
 
             }
             catch (Exception ex)
-            { return InternalServerError(ex); }
+            {
+                ex = ex.InnerException ?? ex;
+                Logger.Exception_Error(ex);
+                return InternalServerError(ex);
+            }
 
             return Ok(ieGroup);
         }
@@ -94,10 +102,13 @@ namespace TemplatePOC.Web.Controllers.API
                                    Templates = ctx.Templates.Select(o => new TemplateItem() { Id = o.Id, Name = o.Name, PreviewUrl = o.PreviewUrl})
                                })
                     .FirstOrDefaultAsync();
-                //group.Templates = await ctx.Templates.Select(o => new TemplateItem() { Id = o.Id, Name = o.Name }).ToListAsync();
 
             }
-            catch (Exception ex) { return InternalServerError(ex); }
+            catch (Exception ex) {
+                ex = ex.InnerException ?? ex;
+                Logger.Exception_Error(ex);
+                return InternalServerError(ex);
+            }
 
             return Ok(group);
         }
@@ -120,6 +131,8 @@ namespace TemplatePOC.Web.Controllers.API
             }
             catch (Exception ex)
             {
+                ex = ex.InnerException ?? ex;
+                Logger.Exception_Error(ex);
                 return InternalServerError(ex);
             }
 
@@ -134,7 +147,11 @@ namespace TemplatePOC.Web.Controllers.API
                 ctx.Lobbies.Add(lobby);
                 await ctx.SaveChangesAsync();
             }
-            catch (Exception ex) { return InternalServerError(ex); }
+            catch (Exception ex) {
+                ex = ex.InnerException ?? ex;
+                Logger.Exception_Error(ex);
+                return InternalServerError(ex);
+            }
 
             return Ok();
         }
@@ -164,7 +181,11 @@ namespace TemplatePOC.Web.Controllers.API
 
                 await ctx.SaveChangesAsync();
             }
-            catch (Exception ex) { return InternalServerError(ex); }
+            catch (Exception ex) {
+                ex = ex.InnerException ?? ex;
+                Logger.Exception_Error(ex);
+                return InternalServerError(ex);
+            }
 
             return Ok();
         }
@@ -186,6 +207,8 @@ namespace TemplatePOC.Web.Controllers.API
             }
             catch (Exception ex)
             {
+                ex = ex.InnerException ?? ex;
+                Logger.Exception_Error(ex);
                 return InternalServerError(ex);
             }
             return Ok();

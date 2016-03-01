@@ -73,6 +73,7 @@
     <Compile Include="SubDomain\LobbyDomain\Enums\enLobbyStatus.cs" />
     <Compile Include="SubDomain\LobbyDomain\Enums\enLobbyType.cs" />
     <Compile Include="SubDomain\LobbyDomain\Interface\ILobbyRepository.cs" />
+    <Compile Include="SubDomain\LobbyDomain\Interface\ILobbyUnitOfWork.cs" />
     <Compile Include="SubDomain\LobbyDomain\ValueObject\LobbyDescription.cs" />
     <Compile Include="SubDomain\LobbyDomain\Entity\LobbyGameGroup.cs" />
     <Compile Include="SubDomain\LobbyDomain\Entity\Template.cs" />
