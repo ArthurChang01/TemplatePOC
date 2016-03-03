@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app')
+        .module('app.common')
         .directive('cssValidation', function () {
             return {
                 restrict: 'A',

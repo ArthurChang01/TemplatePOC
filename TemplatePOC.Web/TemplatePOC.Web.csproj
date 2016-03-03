@@ -363,6 +363,7 @@
     <Content Include="Scripts\vendors\code-mirror\fold\comment-fold.js" />
     <Content Include="Scripts\vendors\code-mirror\fold\foldcode.js" />
     <Content Include="Scripts\vendors\code-mirror\fold\foldgutter.js" />
+    <Content Include="Scripts\vendors\code-mirror\function\autoFormatting.js" />
     <Content Include="Scripts\vendors\code-mirror\hint\show-hint.js" />
     <Content Include="Scripts\vendors\code-mirror\lint\lint.js" />
     <Content Include="Scripts\vendors\code-mirror\mode\css.js" />

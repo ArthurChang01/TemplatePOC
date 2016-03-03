@@ -1,5 +1,5 @@
 ﻿(function () {
-    angular.module("components")
+    angular.module("app.common")
         .value("codeMirrorInstance", { instance: null })
         .directive("cssEditor", cssEditor);
 
@@ -10,7 +10,13 @@
             scope: {
                 content: "="
             },
-            template: "<textarea class='form-control' rows='5' ng-model='content' ui-codemirror='{ onLoad : LoadCodeMirror }' ui-codemirror-opts='editorOptions'></textarea>",
+            template:
+                "<div>" +
+                "   <button title='format text' ng-click='AutoFormatting()'><span class='fa fa-bars'>F</span></button>" +
+                "   <button title='undo' ng-click='Undo()'><span class='fa fa-undo'></span></button>" +
+                "   <button title='redo' ng-click='Redo()'><span class='fa fa-repeat'></span></button>" +
+                "   <textarea class='form-control' rows='5' ng-model='content' ui-codemirror='{ onLoad : LoadCodeMirror }' ui-codemirror-opts='editorOptions'></textarea>" +
+                "</div>",
             controller: ["$scope", "codeMirrorInstance", fnCtrl]
         };
 
@@ -22,6 +28,7 @@
                 height: 128,
                 lint: true,
                 indentUnit: 4,
+                undoDepth: 50,
                 showHint: true,
                 inputStyle: 'textarea',
                 theme: 'elegant',
@@ -31,13 +38,15 @@
             };
 
             vm.LoadCodeMirror = loadCodeMirror;
+            vm.AutoFormatting = autoFormatting;
+            vm.Undo = undo;
+            vm.Redo = redo;
 
             function loadCodeMirror(target) {
                 codeMirrorInstance.instance = target;
                 var timeouts = [];
 
                 target.on("change", function (editor, change) {
-
                     if (change.origin === '+input') {
                         var text = change.text.toString();
 
@@ -49,6 +58,21 @@
                             timeouts.splice(0, timeouts.length);
                     }
                 });
+            }
+
+            function autoFormatting() {
+                var totalLines = codeMirrorInstance.instance.lineCount();
+                var totalChars = codeMirrorInstance.instance.getTextArea().value.length;
+
+                codeMirrorInstance.instance.autoFormatRange({ line: 0, ch: 0 }, { line: totalLines });
+            }
+
+            function undo() {
+                codeMirrorInstance.instance.undo();
+            }
+
+            function redo() {
+                codeMirrorInstance.instance.redo();
             }
         }
     }

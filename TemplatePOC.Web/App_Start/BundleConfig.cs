@@ -8,7 +8,6 @@ namespace TemplatePOC.Web
         // 如需「搭配」的詳細資訊，請瀏覽 http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
-
             bundles.Add(new ScriptBundle("~/bundles/tools").Include(
                     "~/Scripts/vendors/jquery/jquery.js",
                     "~/Scripts/vendors/jquery-validation/jquery.validate.js",
@@ -38,6 +37,8 @@ namespace TemplatePOC.Web
                     "~/Scripts/vendors/code-mirror/fold/foldgutter.js",
                     "~/Scripts/vendors/code-mirror/fold/brace-fold.js",
                     "~/Scripts/vendors/code-mirror/fold/comment-fold.js",
+                    "~/Scripts/vendors/code-mirror/keymap/sublime.js",
+                    "~/Scripts/vendors/code-mirror/function/autoFormatting.js",
                     "~/Scripts/vendors/angular-ui-codemirror/ui-codemirror.js"
                 ));
 
@@ -52,8 +53,8 @@ namespace TemplatePOC.Web
                 .Include("~/Scripts/app/_Common/app.common.js")
                 .Include("~/Scripts/app/ResellerBO/app.reseller.bo.js")
                 .Include("~/Scripts/app/_RouterConfig/app.reseller.bo.routeConfig.js")
-                .IncludeDirectory("~/Scripts/app/_Common", "*.js",true)
-                .IncludeDirectory("~/Scripts/app/ResellerBO","*.js",true));
+                .IncludeDirectory("~/Scripts/app/_Common", "*.js", true)
+                .IncludeDirectory("~/Scripts/app/ResellerBO", "*.js", true));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap/bootstrap.css",
